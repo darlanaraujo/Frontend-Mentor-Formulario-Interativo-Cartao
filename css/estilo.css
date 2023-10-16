@@ -42,6 +42,12 @@
   }
 }
 
+@media (max-width: 900px) {
+  .main .primeira-secao {
+    min-height: 250px;
+  }
+}
+
 .main .segunda-secao {
   width: 100%;
   height: 100%;
@@ -140,7 +146,6 @@
   width: 100%;
   height: 100%;
   position: absolute;
-  border: solid 2px red;
 }
 
 .main .modal .cartao {
@@ -150,12 +155,20 @@
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 2px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+}
+
+@media (max-width: 900px) {
+  .main .modal .cartao {
+    width: 327px;
+    height: 200px;
+  }
 }
 
 .main .modal .cartao-frente {
   background-image: url(./../assets/images/bg-card-front.png);
-  background-repeat: no-repeat;
-  position: absolute;
   top: 20%;
   left: 10%;
   padding: 30px;
@@ -189,6 +202,12 @@
   font-size: 1.9rem;
 }
 
+@media (max-width: 900px) {
+  .main .modal .cartao-frente .dados-cartao .numero-cartao {
+    font-size: 20px;
+  }
+}
+
 .main .modal .cartao-frente .dados-cartao div {
   display: flex;
   justify-content: space-between;
@@ -197,8 +216,6 @@
 
 .main .modal .cartao-verso {
   background-image: url(./../assets/images/bg-card-back.png);
-  background-repeat: no-repeat;
-  position: absolute;
   top: 49%;
   left: 15%;
   display: flex;
@@ -219,5 +236,12 @@
   .main .modal .cartao-verso {
     left: auto;
     right: 30px;
+  }
+}
+
+@media (max-width: 900px) {
+  .main .modal .cartao-verso .seguranca-cartao {
+    position: absolute;
+    top: 78px;
   }
 }

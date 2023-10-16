@@ -16,6 +16,62 @@
     <title>#Frontend Mentor - Formulário Interativo de Cartão</title>
 </head>
 <body>
-    
+    <main class="main">
+        <section class="primeira-secao">
+            <!-- <img src="./assets/images/bg-main-desktop.png" alt="imagem fundo" class="img-background"> -->
+        </section>
+        <section class="segunda-secao">
+            <form class="formulario">
+                <label for="inputNome">
+                    <span class="texto">Cardholder Name</span>
+                    <input type="text" class="input" id="inputNome" placeholder="e.g. Jane Appleseed" required>
+                    <span class="erro">mensagem de erro!</span>
+                </label>
+                
+                <label for="inputNumero">
+                    <span class="texto">Card Number</span>
+                    <input type="text" class="input" id="inputNumero" placeholder="e.g. 1234 5678 9123 0000" required>
+                    <span class="erro">mensagem de erro!</span>
+                </label>
+
+                <div class="wrapper-input">
+                    <label for="inputMes">
+                        <span class="texto">Exp. Date (MM/YY)</span>
+                        <div>
+                            <input type="text" class="input" id="inputMes" placeholder="MM" maxlength="2" required>
+                            <input type="text" class="input" id="inputAno" placeholder="YY" maxlength="2" required>
+                        </div>
+                        <span class="erro">mensagem de erro!</span>
+                    </label>
+                    <label for="">
+                        <span class="texto">CVC</span>
+                        <input type="text" class="input" id="inputCVC" placeholder="e.g. 123" maxlength="3" required>
+                        <span class="erro">mensagem de erro!</span>
+                    </label>
+                </div>
+                <button class="btn" id="btnConfirme">Confirm</button>
+            </form>
+        </section>
+
+        <section class="modal">
+            <div class="cartao cartao-verso">
+                <span class="seguranca-cartao" id="segurancaCartao">000</span>
+            </div>
+            
+            <div class="cartao cartao-frente">
+               <img src="./assets/images/card-logo.svg" class="logo" alt="logo cartao">
+
+               <div class="dados-cartao">
+                   <span class="numero-cartao" id="numeroCartao">0000 0000 0000 0000</span>
+                   <div>
+                       <span class="nome-cartao" id="nomeCartao">Jane Appleseed</span>
+                       <span class="validade-cartao" id="validadeCartao">00/00</span>
+                   </div>
+               </div>
+
+            </div>
+            
+        </section>
+    </main>
 </body>
 </html>

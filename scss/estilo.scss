@@ -1,1 +1,207 @@
 @import 'reset';
+
+.main {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 25% 75%;
+    position: relative;
+    transition: all .8s;
+
+    @include tablet {
+        display: flex;
+        flex-direction: column;
+        transition: 1s;
+    }
+
+    .primeira-secao {
+        width: 100%;
+        height: 100%;
+
+        background-image: url(./../assets/images/bg-main-desktop.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top;
+
+        @include tablet {
+            height: 30%;
+            min-height: 350px;
+            background-image: url(./../assets/images/bg-main-mobile.png);
+        }
+    }
+
+    .segunda-secao {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @include tablet {
+            align-items: flex-start;
+            margin-top: 100px;
+        }
+
+        .formulario {
+            width: 500px;
+            height: 500px;
+            padding: 20px;
+            font-size: 18px;
+            transition: all 1s;
+
+            @include mobile {
+                padding: 40px;
+                width: 100%;
+            }
+
+            label {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                margin-bottom: 30px;
+
+            }
+            
+            .wrapper-input {
+                display: flex;
+                gap: 20px;
+                div {
+                    display: flex;
+                    gap: 20px;
+                }
+            }
+
+            .texto {
+                font-size: 18px;
+                text-transform: uppercase;
+            }
+
+            .input {
+                width: 100%;
+                // max-width: 300px;
+                height: 50px;
+                border: 1px solid $cinzaVioletaEscuro;
+                border-radius: 10px;
+                padding: 10px;
+                font-size: 18px;
+                color: $cinzaVioletaEscuro;
+
+                &:focus, &:active {
+                    
+                    border: 1px solid $gradiente2;
+                }
+
+                &.erro {
+                    border-color: $vermelho;
+                }
+            }
+
+            .erro {
+                color: $vermelho;
+                display: none;
+
+                &.active {
+                    display: block;
+                }
+            }
+
+            .btn {
+                width: 100%;
+                height: 50px;
+                background-color: $violetaEscuro;
+                border: none;
+                border-radius: 10px;
+                color: $branco;
+                font-size: 18px;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: $cinzaVioletaEscuro;
+                }
+            }
+        }
+    }
+
+    .modal {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        border: solid 2px red;
+
+        .cartao {
+            width: 447px;
+            height: 245px;
+            color: $branco;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .cartao-frente {
+            background-image: url(./../assets/images/bg-card-front.png);
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 20%;
+            left: 10%;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 1s;
+
+            @include tablet {
+                left:  25%;
+            }
+
+            @include mobile {
+                left: 30px;
+            }
+
+            .logo {
+                width: 80px;
+            }
+
+            .dados-cartao {
+                
+                text-align: center;
+                
+
+                .numero-cartao {
+                    font-size: 1.9rem;
+                    
+                }
+
+                div {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 20px;
+
+                }
+            }
+        }
+
+        .cartao-verso {
+            background-image: url(./../assets/images/bg-card-back.png);
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 49%;
+            left: 15%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 60px;
+            transition: all 1s;
+
+            @include tablet {
+                top: 40px;
+                left: 50%;
+            }
+            
+            @include mobile {
+                left: auto;
+                right: 30px;
+
+            }
+        }
+    }
+}

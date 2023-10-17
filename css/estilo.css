@@ -42,7 +42,7 @@
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 700px) {
   .main .primeira-secao {
     min-height: 250px;
   }
@@ -54,11 +54,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 1s;
 }
 
 @media (max-width: 1440px) {
   .main .segunda-secao {
     align-items: flex-start;
+    margin-top: 150px;
+  }
+}
+
+@media (max-width: 700px) {
+  .main .segunda-secao {
     margin-top: 100px;
   }
 }
@@ -68,10 +75,11 @@
   height: 500px;
   padding: 20px;
   font-size: 18px;
+  z-index: 10;
   transition: all 1s;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 700px) {
   .main .segunda-secao .formulario {
     padding: 40px;
     width: 100%;
@@ -91,8 +99,13 @@
 }
 
 .main .segunda-secao .formulario .wrapper-input div {
-  display: flex;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.main .segunda-secao .formulario .wrapper-input div span {
+  grid-column: 1 / 3;
 }
 
 .main .segunda-secao .formulario .texto {
@@ -114,8 +127,21 @@
   border: 1px solid #600594;
 }
 
-.main .segunda-secao .formulario .input.erro {
+.main .segunda-secao .formulario .input.alerta {
   border-color: #ff5252;
+}
+
+.main .segunda-secao .formulario .input.alerta + .erro {
+  display: block;
+}
+
+.main .segunda-secao .formulario .input::-webkit-outer-spin-button, .main .segunda-secao .formulario .input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.main .segunda-secao .formulario .input[type=number] {
+  -moz-appearance: textfield;
 }
 
 .main .segunda-secao .formulario .erro {
@@ -146,6 +172,7 @@
   width: 100%;
   height: 100%;
   position: absolute;
+  z-index: 9;
 }
 
 .main .modal .cartao {
@@ -160,7 +187,7 @@
   position: absolute;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 700px) {
   .main .modal .cartao {
     width: 327px;
     height: 200px;
@@ -180,11 +207,11 @@
 
 @media (max-width: 1440px) {
   .main .modal .cartao-frente {
-    left: 25%;
+    left: 20%;
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 700px) {
   .main .modal .cartao-frente {
     left: 30px;
   }
@@ -202,7 +229,7 @@
   font-size: 1.9rem;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 700px) {
   .main .modal .cartao-frente .dados-cartao .numero-cartao {
     font-size: 20px;
   }
@@ -228,18 +255,19 @@
 @media (max-width: 1440px) {
   .main .modal .cartao-verso {
     top: 40px;
-    left: 50%;
+    left: auto;
+    right: 20%;
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 700px) {
   .main .modal .cartao-verso {
     left: auto;
     right: 30px;
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 700px) {
   .main .modal .cartao-verso .seguranca-cartao {
     position: absolute;
     top: 78px;

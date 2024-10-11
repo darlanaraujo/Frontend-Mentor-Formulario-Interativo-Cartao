@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./css/estilo.css">
 
     <!-- Script -->
+    <script src="https://kit.fontawesome.com/109d143e9b.js" crossorigin="anonymous"></script>
     <script src="./js/script.js" defer></script>
 
     <!-- Favicon -->
@@ -21,17 +22,17 @@
             <!-- <img src="./assets/images/bg-main-desktop.png" alt="imagem fundo" class="img-background"> -->
         </section>
         <section class="segunda-secao">
-            <form class="formulario">
+            <form class="formulario active">
                 <label for="inputNome">
                     <span class="texto">Cardholder Name</span>
                     <input type="text" class="input" id="inputNome" placeholder="e.g. Jane Appleseed" required oninput="this.value = this.value.replace(/[^A-Za-z. ]/g, '').replace(/(\..*?)\..*/g, '$1');">
-                    <span class="erro">mensagem de erro!</span>
+                    <span class="erro">Can't be blank</span>
                 </label>
                 
                 <label for="inputNumero">
                     <span class="texto">Card Number</span>
                     <input type="text" class="input" id="inputNumero" placeholder="e.g. 1234 5678 9123 0000" minlength="16" maxlength="16" required oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
-                    <span class="erro">mensagem de erro!</span>
+                    <span class="erro">Can't be blank</span>
                 </label>
 
                 <div class="wrapper-input">
@@ -40,17 +41,24 @@
                         <div>
                             <input type="text" class="input" id="inputMes" placeholder="MM" minlength="2" maxlength="2" required oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
                             <input type="text" class="input" id="inputAno" placeholder="YY" minlength="2" maxlength="2" required oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
-                            <span class="erro">mensagem de erro!</span>
+                            <span class="erro">Can't be blank</span>
                         </div>
                     </label>
                     <label for="">
                         <span class="texto">CVC</span>
                         <input type="text" class="input" id="inputCVC" placeholder="e.g. 123" minlength="3" maxlength="3" required oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
-                        <span class="erro">mensagem!</span>
+                        <span class="erro">Can't be blank</span>
                     </label>
                 </div>
                 <button type="submit" class="btn" id="btnConfirme">Confirm</button>
             </form>
+
+            <div class="concluido">
+                <span class="circulo"><i class="fa-solid fa-check"></i></span>
+                <h1 class="titulo">Thank you!</h1>
+                <p class="texto">We've added your card details</p>
+                <button class="btn" id="btnContinue">Continue</button>
+            </div>
         </section>
 
         <section class="modal">

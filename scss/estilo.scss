@@ -6,12 +6,10 @@
     display: grid;
     grid-template-columns: 25% 75%;
     position: relative;
-    transition: all .8s;
 
     @include tablet {
         display: flex;
         flex-direction: column;
-        transition: 1s;
     }
 
     .primeira-secao {
@@ -40,7 +38,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        transition: all 1s;
+
 
         @include tablet {
             align-items: flex-start;
@@ -52,12 +50,17 @@
         }
 
         .formulario {
-            width: 500px;
+            width: 400px;
             height: 500px;
             padding: 20px;
             font-size: 18px;
             z-index: 10;
-            transition: all 1s;
+            display: none;
+            flex-direction: column;
+
+            &.active {
+                display: flex;
+            }
 
             @include mobile {
                 padding: 40px;
@@ -68,7 +71,7 @@
                 display: flex;
                 flex-direction: column;
                 gap: 10px;
-                margin-bottom: 30px;
+                margin-bottom: 20px;
             }
             
             .wrapper-input {
@@ -111,6 +114,7 @@
 
                     & + .erro {
                         display: block;
+                        font-size: 12px;
                     }
                 }
 
@@ -135,19 +139,64 @@
                 }
             }
 
-            .btn {
-                width: 100%;
-                height: 50px;
-                background-color: $violetaEscuro;
-                border: none;
-                border-radius: 10px;
-                color: $branco;
-                font-size: 18px;
-                cursor: pointer;
+            
+        }
 
-                &:hover {
-                    background-color: $cinzaVioletaEscuro;
+        .concluido {
+            z-index: 10;
+            display: none;
+            width: 400px;
+            padding: 20px;
+            flex-direction: column;
+            gap: 15px;
+            justify-content: center;
+            align-items: center;
+
+            &.active {
+                display: flex;
+            }
+
+            .circulo {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                background-image: -moz-linear-gradient($gradiente1, $gradiente2);
+                margin-bottom: 20px;
+
+                & i {
+                    display: inline-block;
+                    font-size: 30px;
+                    color: $branco;
                 }
+
+            }
+            
+            .titulo {
+                text-transform: uppercase;
+                letter-spacing: 3px;
+            }
+
+            .texto {
+                color: $cinzaVioletaEscuro;
+            }
+        }
+
+        .btn {
+            width: 100%;
+            height: 50px;
+            margin-top: 20px;
+            background-color: $violetaEscuro;
+            border: none;
+            border-radius: 8px;
+            color: $branco;
+            font-size: 18px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $cinzaVioletaEscuro;
             }
         }
     }
@@ -228,7 +277,6 @@
             justify-content: flex-end;
             align-items: center;
             padding: 60px;
-            transition: all 1s;
 
             @include tablet {
                 top: 40px;
